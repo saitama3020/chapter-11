@@ -14,6 +14,6 @@ export class Bike {
   user?: User;
   builder?: Builder;
   items?: any;
-  raitngs?: any;
+  ratings?: any;
   constructor() {}
 }

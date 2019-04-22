@@ -4,8 +4,9 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { AppRoutingModule } from './app-routing.module';
 import { Title } from '@angular/platform-browser';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
-
+// App imports
 import { AppComponent } from './app.component';
 import { environment } from '../environments/environment';
 import { HomeModule } from './pages/home/home.module';
@@ -17,6 +18,7 @@ import { HttpHandleErrorService } from './pages/shared/_services/http-handle-err
 import { AppHttpInterceptorService } from './shared/_services/http-interceptor.service';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -25,11 +27,14 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule,
+
     HomeModule,
     BikesModule,
     BuildersModule,
     AuthModule,
-    HttpClientModule,
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
     NgbModule.forRoot()
   ],

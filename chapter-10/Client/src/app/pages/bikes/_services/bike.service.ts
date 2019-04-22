@@ -38,7 +38,7 @@ export class BikeService {
     .pipe(catchError(this.handleError('addBike', bike)));
   }
 
-  updateBike (bike: Bike, id: number): Observable<Bike> {
+  updateBike(id: number, bike: Bike): Observable<Bike> {
     return this.http.put<Bike>(this.bikesUrl + `/${id}`, bike)
     .pipe(catchError(this.handleError('updateBike', bike)));
   }
