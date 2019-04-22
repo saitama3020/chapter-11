@@ -49,7 +49,7 @@ export class BuilderService {
     .pipe(catchError(this.handleError('updateBuilder', builder)));
   }
 
-  deleteBuilder(id: number): Observable<Builder[]>
+  deleteBuilder(id: number): Observable<any>
   {
     return this.http.delete<Builder[]>(this.buildersUrl + `/${id}`).pipe(
       catchError(this.handleError('deleteBuilder'))

@@ -1,8 +1,6 @@
 <header>
-  <nav class="navbar-expand-md navbar-dark fixed-top bg-dark">
-    <a class="navbar-brand" [routerLink]="['/']"
-    (click)="setTitle('Custom Bikes Garage')">Custom Bikes Garage</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse"
+  <nav class="navbar-expand-md navbar-dark fixed-top bg-dark"><a class="navbar-brand" [routerLink]="['/']"
+    (click)="setTitle('Custom Bikes Garage')">Custom Bikes Garage</a><button class="navbar-toggler" type="button" data-toggle="collapse"
       data-target="#navbarCollapse" aria-controls="navbarCollapse"
       aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span>
     </button>
@@ -18,16 +16,25 @@
             routerLinkActive="active"
             (click)="setTitle('Builders')">Builders</a>
         </li>
-        <li class="nav-item">
+        <li *ngIf="!auth.isAuthenticated()" class="nav-item">
           <a class="nav-link" [routerLink]="['/login']"
           routerLinkActive="active" (click)="setTitle('Login')">Login</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" [routerLink]="['/register']"
+          <a *ngIf="!auth.isAuthenticated()" class="nav-link" [routerLink]="['/register']"
           routerLinkActive="active" (click)="setTitle('Register')">Register</a>
         </li>
-        <li class="nav-item"><a class="nav-link" [routerLink]="['/logout']"
-        routerLinkActive="active">Logout</a></li>
+        <li *ngIf="auth.isAuthenticated()" class="nav-item">
+          <div *ngDropdown class="d-inline-block">
+            <button class="btn btn-secondary" id="dropdownBasic1"
+              ngDrowdownToggle>{{ auth.currentUser?.name }}</button>
+            <div ngbDropdownMenu aria-albelledby="dropdownBasic1">
+              <button class="dropdown-item" click="onLogout();">Logout</button>
+            </div>
+          </div>
+        </li>
+          <!-- <a class="nav-link" [routerLink]="['/logout']"
+        routerLinkActive="active">Logout</a></li> -->
       </ul>
     </div>
   </nav>

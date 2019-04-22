@@ -43,7 +43,7 @@ export class BikeService {
     .pipe(catchError(this.handleError('updateBike', bike)));
   }
 
-  deleteBike(id: number): Observable<Bike[]>
+  deleteBike(id: number): Observable<any>
   {
     return this.http.delete<Bike[]>(this.bikesUrl + `/${id}`)
     .pipe(catchError(this.handleError('deleteBike')));
