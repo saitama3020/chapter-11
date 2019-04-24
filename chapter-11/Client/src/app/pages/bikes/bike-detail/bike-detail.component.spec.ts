@@ -1,6 +1,12 @@
+import { RouterTestingModule } from '@angular/router/testing';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { NO_ERRORS_SCHEMA } from '@angular/core';
 
+// App imports
 import { BikeDetailComponent } from './bike-detail.component';
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { HttpHandleErrorService } from '../../shared/_services/http-handle-error.service';
 
 describe('BikeDetailComponent', () => {
   let component: BikeDetailComponent;
@@ -8,7 +14,14 @@ describe('BikeDetailComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ BikeDetailComponent ]
+      imports: [
+        RouterTestingModule,
+        FormsModule,
+        HttpClientModule
+      ],
+      declarations: [ BikeDetailComponent ],
+      schemas: [NO_ERRORS_SCHEMA],
+      providers: [HttpHandleErrorService]
     })
     .compileComponents();
   }));

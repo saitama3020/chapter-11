@@ -1,6 +1,10 @@
+import { RouterTestingModule } from '@angular/router/testing';
+import { HttpClientModule } from '@angular/common/http';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
+// App imports
 import { BuilderListComponent } from './builder-list.component';
+import { HttpHandleErrorService } from '../../shared/_services/http-handle-error.service';
 
 describe('BuilderListComponent', () => {
   let component: BuilderListComponent;
@@ -8,7 +12,12 @@ describe('BuilderListComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ BuilderListComponent ]
+      imports: [
+        RouterTestingModule,
+        HttpClientModule
+      ],
+      declarations: [ BuilderListComponent ],
+      providers: [HttpHandleErrorService]
     })
     .compileComponents();
   }));

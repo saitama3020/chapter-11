@@ -1,5 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { RouterTestingModule } from '@angular/router/testing';
 
+// App imports
 import { BikesComponent } from './bikes.component';
 
 describe('BikesComponent', () => {
@@ -8,6 +10,9 @@ describe('BikesComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
+      imports: [
+        RouterTestingModule
+      ],
       declarations: [ BikesComponent ]
     })
     .compileComponents();
@@ -22,4 +27,9 @@ describe('BikesComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should create router-outlet', async(() => {
+    const compiled = fixture.debugElement.nativeElement;
+    expect(compiled.querySelector('router-outlet')).toBeDefined();
+  }));
 });

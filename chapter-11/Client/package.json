@@ -7,7 +7,9 @@
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
+    "lint:dev": "npm run sasslint && npm run tslint",
     "sasslint": "./node_modules/.bin/stylelint \"src/**/*.scss\" --syntax scss || echo \"Ops: Stylelint failed for some file(s).\"",
+    "tslint": "./node_modules/.bin/tslint --project tsconfig.json || echo \"Ops: TSlint failed for some file(s).\"",
     "e2e": "ng e2e"
   },
   "private": true,
@@ -51,6 +53,7 @@
     "stylelint-scss": "^3.6.0",
     "ts-node": "~7.0.0",
     "tslint": "~5.11.0",
+    "tslint-angular": "^1.1.2",
     "typescript": "~3.2.2"
   }
 }
