@@ -26,6 +26,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
   ],
   imports: [
     BrowserModule,
+    NgbModule.forRoot(),
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
@@ -35,7 +36,6 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     BikesModule,
     BuildersModule,
     AuthModule,
-    NgbModule.forRoot(),
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
   ],
   providers: [

@@ -2,7 +2,7 @@
     "extends": ["stylelint-config-standard"],
     "rules": {
         "font-family-name-quotes": "always-where-recommended",
-        "function-url-quoted": [
+        "function-url-quotes": [
             "always",
             {
                 "except": ["empty"]
@@ -20,7 +20,7 @@
         "selector-no-vendor-prefix": true,
         "value-no-vendor-prefix": true,
         "no-empty-source": null,
-        "selector-class-pattenr": "[a-z-]+",
+        "selector-class-pattern": "[a-z-]+",
         "selector-id-pattern": "[a-z-]+",
         "selector-max-id": 0,
         "selector-no-qualifying-type": true,

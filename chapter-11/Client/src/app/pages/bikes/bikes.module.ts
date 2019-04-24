@@ -6,12 +6,16 @@ import { BikesComponent } from './bikes.component';
 import { BikeDetailComponent } from './bike-detail/bike-detail.component';
 import { BikeListComponent } from './bike-list/bike-list.component';
 import { BikeSearchPipe } from './_pipes/bike-search.pipe';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [BikesComponent, BikeDetailComponent, BikeListComponent, BikeSearchPipe],
   imports: [
     CommonModule,
-    BikesRoutingModule
+    BikesRoutingModule,
+    NgbModule.forRoot(),
+    FormsModule,
   ]
 })
 export class BikesModule { }
