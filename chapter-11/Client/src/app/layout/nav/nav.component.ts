@@ -13,23 +13,22 @@ import { AuthService } from '../../pages/auth/_services/auth.service';
 })
 export class NavComponent implements OnInit {
 
-  constructor(private titleTagService: Title,
+  constructor(
+    private titleTagService: Title,
     public auth: AuthService,
     private router: Router) { }
 
-  public setTitle(pageTitle: string)
-  {
+  public setTitle(pageTitle: string) {
     this.titleTagService.setTitle( pageTitle );
   }
 
   ngOnInit() {
-    if(this.auth.getToken()) {
+    if (this.auth.getToken()) {
       this.auth.getUser().subscribe();
     }
   }
 
-  onLogout()
-  {
+  onLogout() {
     this.auth.onLogout().subscribe();
   }
 

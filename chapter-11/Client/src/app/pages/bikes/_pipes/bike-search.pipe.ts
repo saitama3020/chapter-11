@@ -8,7 +8,7 @@ export class BikeSearchPipe implements PipeTransform {
   transform(items: any, searchText?: string): any {
     if (searchText) {
       searchText = searchText.toLowerCase();
-      return items.filter((item: any) => 
+      return items.filter((item: any) =>
         item.model.toLowerCase().indexOf(searchText) > -1);
     }
   }

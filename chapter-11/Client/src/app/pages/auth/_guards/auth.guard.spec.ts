@@ -1,7 +1,7 @@
 import { RouterTestingModule } from '@angular/router/testing';
 import { TestBed, async, inject } from '@angular/core/testing';
 import { HttpClient, HttpHandler } from '@angular/common/http';
-import { ActivatedRoute, ActivatedRouteSnapshot, RouterState, RouterStateSnapshot } from '@angular/router';
+import { ActivatedRouteSnapshot, RouterStateSnapshot } from '@angular/router';
 
 // App imports
 import { AuthGuard } from './auth.guard';
@@ -10,7 +10,7 @@ import { Router } from '@angular/router';
 
 
 describe('AuthGuard', () => {
-  let mockSnapshot: any = jasmine.createSpyObj<RouterStateSnapshot>("RouterStateSnapshot", ['toString']);
+  const mockSnapshot: any = jasmine.createSpyObj<RouterStateSnapshot>('RouterStateSnapshot', ['toString']);
   const router = {
     navigate: jasmine.createSpy('navigate')
   };

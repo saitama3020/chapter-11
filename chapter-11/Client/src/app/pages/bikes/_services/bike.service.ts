@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpParams, HttpErrorResponse } from '@angular/common/http';
-import { HttpHeaders } from '@angular/common/http';
-import { Observable, throwError } from 'rxjs';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 
 import { environment } from './../../../../environments/environment';
@@ -18,7 +17,7 @@ export class BikeService {
   private bikesUrl = this.apiUrl + '/bikes/';
   private handleError: HandleError;
 
-  constructor(private http: HttpClient, httpErrorHandler: HttpHandleErrorService) { 
+  constructor(private http: HttpClient, httpErrorHandler: HttpHandleErrorService) {
     this.handleError = httpErrorHandler.createHandleError('BikesService');
   }
 
@@ -31,7 +30,7 @@ export class BikeService {
   getBikeDetail (id: number): Observable<Bike[]> {
     return this.http.get<Bike[]>(this.bikesUrl + `/${id}`)
     .pipe(catchError(this.handleError('getBikeDetail', [])));
-  }  
+  }
 
   addBike(bike: Bike): Observable<Bike> {
     return this.http.post<Bike>(this.bikesUrl, bike)
@@ -43,14 +42,12 @@ export class BikeService {
     .pipe(catchError(this.handleError('updateBike', bike)));
   }
 
-  deleteBike(id: number): Observable<any>
-  {
+  deleteBike(id: number): Observable<any> {
     return this.http.delete<Bike[]>(this.bikesUrl + `/${id}`)
     .pipe(catchError(this.handleError('deleteBike')));
   }
 
-  voteOnBike(vote: any, bike: number): Observable<any>
-  {
+  voteOnBike(vote: any, bike: number): Observable<any> {
     const rating = vote;
     return this.http.post(this.bikesUrl + `/${bike}/ratings`, {rating})
     .pipe(catchError(this.handleError('voteOnBike', [])));

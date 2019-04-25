@@ -47,8 +47,7 @@ export class BikeDetailComponent implements OnInit {
   }
 
   onVote(rating: number, id: number): void {
-    if(this.checkUserVote(this.bike.ratings))
-    {
+    if (this.checkUserVote(this.bike.ratings)) {
       alert('you already vote on this bike');
       return;
     }
@@ -67,7 +66,7 @@ export class BikeDetailComponent implements OnInit {
     const currentUserId = this.auth.currentUser.id;
     let ratingUserId: number;
     Object.keys(ratings).forEach( (i) => {
-      ratingUserId = ratings[i].user_id
+      ratingUserId = ratings[i].user_id;
     });
     if (currentUserId === ratingUserId) {
       return true;
@@ -76,8 +75,7 @@ export class BikeDetailComponent implements OnInit {
     }
   }
 
-  onSubmit(bike)
-  {
+  onSubmit(bike) {
     this.isLoading = true;
     const id = +this.route.snapshot.paramMap.get('id');
     this.bikeService.updateBike(id, bike.value)
@@ -88,12 +86,9 @@ export class BikeDetailComponent implements OnInit {
   }
 
   checkBikeOwner(): Boolean {
-    if (this.auth.currentUser.id === this.bike.user.id)
-    {
+    if (this.auth.currentUser.id === this.bike.user.id) {
       return true;
-    }
-    else 
-    {
+    } else {
       return false;
     }
   }

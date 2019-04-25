@@ -29,14 +29,12 @@ export class BuilderListComponent implements OnInit {
       );
   }
 
-  protected handleResponse(response: Builder[])
-  {
+  protected handleResponse(response: Builder[]) {
     this.isLoading = false;
     this.builders = response;
   }
 
-  protected handleError(error: any)
-  {
+  protected handleError(error: any) {
     this.isLoading = false;
     console.error(error);
   }

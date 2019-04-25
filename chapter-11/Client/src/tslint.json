@@ -9,7 +9,7 @@
       "check-interpolation",
       "check-semicolon"
     ],
-    "no-unused-variable": true,
+    "no-unused-variable": false,
     "banana-in-box": true,
     "use-view-encapsulation": true,
     "contextual-life-cycle": true,

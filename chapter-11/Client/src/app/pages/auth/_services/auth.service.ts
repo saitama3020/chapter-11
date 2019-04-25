@@ -37,9 +37,9 @@ export class AuthService {
      );
      return this.http.post(this.registerUrl, request, httpOptions)
     .pipe(
-      map((response: User) =>{
+      map((response: User) => {
         const token: string = response['access_token'];
-        if(token){
+        if (token) {
           this.setToken(token);
           this.getUser().subscribe();
         }
@@ -54,10 +54,9 @@ export class AuthService {
      );
      return this.http.post(this.loginUrl, request, httpOptions)
      .pipe(
-       map((response: User) =>{
+       map((response: User) => {
          const token: string = response['access_token'];
-         if(token)
-         {
+         if (token) {
            this.setToken(token);
            this.getUser().subscribe();
          }
@@ -96,19 +95,18 @@ export class AuthService {
    }
 
    private handleError(error: HttpErrorResponse) {
-     if(error.error instanceof ErrorEvent) {
+     if (error.error instanceof ErrorEvent) {
        console.error('An error occured:',
        error.error.message);
      } else {
        return throwError(error);
      }
-     return throwError('Ohps something wrong happen here; please try again later.')
+     return throwError('Ohps something wrong happen here; please try again later.');
    }
 
    isAuthenticated(): boolean {
      const token: string = this.getToken();
-     if(token)
-     {
+     if (token) {
        return true;
      }
      return false;

@@ -32,7 +32,7 @@ export class RegisterComponent implements OnInit {
     this.registerForm = this.fb.group({
       name: [this.user.name, Validators.compose([Validators.required])],
       email: [this.user.email, Validators.compose([Validators.required, Validators.email])],
-      password: [this.user.password, 
+      password: [this.user.password,
         Validators.compose([
           Validators.compose([Validators.required, Validators.minLength(6)])])],
     });
@@ -44,10 +44,9 @@ export class RegisterComponent implements OnInit {
         this.router.navigate(['bikes']);
       },
       (response) => {
-        if(response.status = 422)
-        {
-          Object.keys(response.error).map((err)=>{
-            this.error = `${response.error[err]}`
+        if (response.status = 422) {
+          Object.keys(response.error).map((err) => {
+            this.error = `${response.error[err]}`;
           });
         } else {
           this.error = response.error;

@@ -4,7 +4,6 @@ import { NO_ERRORS_SCHEMA } from '@angular/core';
 
 // App imports
 import { AppComponent } from './app.component';
-import { HomeComponent } from './pages/home/home.component';
 
 
 describe('AppComponent', () => {
@@ -53,8 +52,7 @@ describe('AppComponent', () => {
   //   const compiled = fixture.debugElement.nativeElement;
   //   expect(compiled.querySelector('router-outlet').toBeDefined());
   // }));
-
-  it('should create footer tag', async(() =>{
+  it('should create footer tag', async(() => {
     const compiled = fixture.debugElement.nativeElement;
     expect(compiled.querySelector('footer').textContent).toContain('2018 © All Rights Reserved');
   }));

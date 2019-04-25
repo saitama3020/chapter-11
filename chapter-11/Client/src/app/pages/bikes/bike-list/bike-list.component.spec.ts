@@ -18,9 +18,9 @@ describe('BikeListComponent', () => {
         RouterTestingModule,
         HttpClientModule,
       ],
-      declarations: [ 
+      declarations: [
         BikeListComponent,
-        BikeSearchPipe 
+        BikeSearchPipe
       ],
       schemas: [NO_ERRORS_SCHEMA],
       providers: [HttpHandleErrorService]
