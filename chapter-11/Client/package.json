@@ -12,7 +12,7 @@
     "tslint": "./node_modules/.bin/tslint --project tsconfig.json || echo \"Ops: TSlint failed for some file(s).\"",
     "e2e": "ng e2e",
     "build:docker": "npm run lint:dev && npm run test --watch false && npm run e2e && npm run build && npm run docker:image",
-    "doker:image": "./_scripts/create-docker-image.sh"
+    "docker:image": "./_scripts/create-docker-image.sh"
   },
   "private": true,
   "dependencies": {
