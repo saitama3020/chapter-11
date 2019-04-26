@@ -25,7 +25,7 @@
                   </div>
                   <div *ngIf="bike?.builder" class="card-header">
                     <strong>Builder</strong>:
-                    <a routerLink="/builders/bike{{bike?.builder['id']}}">{{ bike?.builder['name'] }}</a>
+                    <a routerLink="/builders/bike{{ bike?.builder['id'] }}">{{ bike?.builder['name'] }}</a>
                   </div>
                   <div *ngIf="bike?.items" class="card-header">
                     <strong>Featured items</strong>:</div>

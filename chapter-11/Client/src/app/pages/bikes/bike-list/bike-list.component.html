@@ -29,12 +29,12 @@
         <div class="col-md-4" *ngFor="let bike of bikes | bikeSearch:searchText ">
           <div class="card mb-4 box-shadow">
             <img class="card-img-top"
-              src="{{bike.picture}}"
+              src="{{ bike.picture }}"
               alt="{{ bike.model }}">
               <div class="card-body">
                 <p>{{ bike.model }} | {{ bike.year }}</p>
                 <p class="card-text">{{ bike.mods }}</p>
-                <a routerLink="/bikes/{{bike.id}}" class="card-link">Vote</a>
+                <a routerLink="/bikes/{{ bike.id }}" class="card-link">Vote</a>
               </div>
           </div>
         </div>

@@ -31,12 +31,12 @@ export class BikeListComponent implements OnInit {
   }
 
   protected handleResponse(response: Bike[]) {
-    this.isLoading = false,
-    this.bikes = response;
+    this.isLoading = false;
+    this.bikes = response['data'];
   }
 
   protected handleError (error: any) {
-    this.isLoading = false,
+    this.isLoading = false;
     console.error(error);
   }
 

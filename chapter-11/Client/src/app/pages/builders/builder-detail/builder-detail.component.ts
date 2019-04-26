@@ -30,6 +30,7 @@ export class BuilderDetailComponent implements OnInit {
     const id = +this.route.snapshot.paramMap.get('id');
     this.builderService.getBuilderDetail(id)
       .subscribe(builder => {
+        console.log(builder);
         this.isLoading = false;
         this.builder = builder['data'];
       });

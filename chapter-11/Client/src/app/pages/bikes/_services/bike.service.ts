@@ -14,7 +14,7 @@ import { HttpHandleErrorService, HandleError } from './../../shared/_services/ht
 export class BikeService {
 
   private readonly apiUrl = environment.apiUrl;
-  private bikesUrl = this.apiUrl + '/bikes/';
+  private bikesUrl = this.apiUrl + '/bikes';
   private handleError: HandleError;
 
   constructor(private http: HttpClient, httpErrorHandler: HttpHandleErrorService) {
@@ -53,14 +53,4 @@ export class BikeService {
     .pipe(catchError(this.handleError('voteOnBike', [])));
   }
 
-  // private handleError(error: HttpErrorResponse){
-  //   if(error.error instanceof ErrorEvent)
-  //   {
-  //     console.error('An error occured:', error.error.message);
-
-  //   } else {
-  //     return throwError(error);
-  //   }
-  //   return throwError('Something bad happened; please try again later.');
-  // }
 }

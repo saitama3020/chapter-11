@@ -31,7 +31,7 @@ services:
     - ./Server:/application
     - ./phpdocker/php-fpm/php-ini-overrides.ini:/etc/php/7.2/fpm/conf.d/99-overrides.ini
   appserver:
-    image 'angular-laravel-book'
+    image: 'angular-laravel-book'
     container_name: chapter-11-appserver
     build: './Client'
     ports:

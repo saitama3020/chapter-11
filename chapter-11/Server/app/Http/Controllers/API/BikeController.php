@@ -148,7 +148,7 @@ class BikeController extends Controller
     public function show($id)
     {
         $showBikeById = Bike::with(['items', 'builder', 'garages'])->findOrFail($id);
-        return new BikesResource($bike);
+        return new BikesResource($showBikeById);
         // return $showBikeById;
     }
 

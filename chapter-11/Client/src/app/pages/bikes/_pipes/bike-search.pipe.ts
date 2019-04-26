@@ -11,6 +11,7 @@ export class BikeSearchPipe implements PipeTransform {
       return items.filter((item: any) =>
         item.model.toLowerCase().indexOf(searchText) > -1);
     }
+    return items;
   }
 
 }
