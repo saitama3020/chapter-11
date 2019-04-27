@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Builder;
 use Validator;
-use App\Http\Resources\BuilderResource;
+use App\Http\Resources\BuildersResource;
 
 
 class BuilderController extends Controller
@@ -84,7 +84,7 @@ class BuilderController extends Controller
             return response()->json($validator->errors(), 422);
         }
         $createBuilder = Builder::create($request->all());
-        return new BuilderResource($createBuilder);
+        return new BuildersResource($createBuilder);
     }
 
     /**
@@ -123,7 +123,7 @@ class BuilderController extends Controller
     public function show($id)
     {
         $showBuilderById = Builder::with('Bike')->findOrFail($id);
-        return new BuilderResource($showBuilderById);
+        return new BuildersResource($showBuilderById);
     }
 
     /**
@@ -181,7 +181,7 @@ class BuilderController extends Controller
         }
         $updateBuilderById = Builder::findOrFail($id);
         $updateBuilderById->update($request->all());
-        return new BuilderResource($updateBuilderById);
+        return new BuildersResource($updateBuilderById);
     }
 
     /**
