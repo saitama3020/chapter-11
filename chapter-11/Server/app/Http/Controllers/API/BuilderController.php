@@ -123,6 +123,7 @@ class BuilderController extends Controller
     public function show($id)
     {
         $showBuilderById = Builder::with('Bike')->findOrFail($id);
+        return new BuilderResource($showBuilderById);
     }
 
     /**
@@ -180,7 +181,7 @@ class BuilderController extends Controller
         }
         $updateBuilderById = Builder::findOrFail($id);
         $updateBuilderById->update($request->all());
-        return $updateBuilderById;
+        return new BuilderResource($updateBuilderById);
     }
 
     /**
