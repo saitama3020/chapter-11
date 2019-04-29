@@ -55,7 +55,6 @@ export class BikeDetailComponent implements OnInit {
     this.bikeService.voteOnBike(rating, id)
       .subscribe(
         (response) => {
-          console.log(response);
           this.userVote = response.data.rating;
           this.bike['average_rating'] = response.data.averate_rating;
           this.bike.ratings.push(response.data);
